@@ -1,19 +1,399 @@
 /**
  * @name Wildberry
  * @version 1.0.0
- * @description Inspired by a Pop Tart flavour enjoy a berry inspired color storm for discord
- * @author Daggy1234
- * @source https://github.com/DagCord/Wildberry
-*/
-
-@import url('https://dagcord.github.io/Wildberry/wildberry.css');
+ * @description: Inspired by a Pop Tart flavour enjoy a berry inspired color storm for discord.
+ * @website https://github.com/DagCord/Wildberry
+ */
 
 
 
 
 :root {
-  /* Background image variables */
-  --background-image: url('https://imgur.com/Fmoe36e.png'); /* Main background image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
-  --background-image-blur: 5px; /* Blur intensity of --background-image | Must end in px | DEFAULT: 5px */
-  --background-image-size: cover; /* Size of the background image | DEFAUT: cover | OPTIONS: cover, contain */
-  --background-image-position: center; /* Position of background image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
+    /* Color palette */
+    --wildberry-primary: 23,0,39;
+    --wildberry-secondary: 53,0,88;
+    --wildberry-secondary-alt: 244,1,116;
+    --wildberry-tertiary: 76,0,124;
+    --wildberry-accent-color : 0,255,183;
+    --wildberry-input-box: 53,0,88;
+    --wildberry-mention:  151,0,76;
+    --wildberry-red: 255,108,92;
+    --wildberry-svg: 244,1,116;
+    --wildberry-less-hot: 204,0,102;
+
+    /* Scrollbar */
+    --wildberry-scrollbar-track: var(--wildberry-primary);
+    --wildberry-scrollbar-thumb: var(--wildberry-secondary-alt);
+    
+}
+html.theme-light::before {
+    content: "This is a dark mode theme. Maybe find a good light mod e theme lol";
+    font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: var(--wildberry-primary);
+    text-align: center;
+    position: absolute;
+    z-index: 10001;
+    right: 0;
+    left: 0;
+}
+.theme-dark {
+    --background-primary: var(--wildberry-primary);
+    --background-secondary: var(--wildberry-secondary);
+    --background-secondary-alt: var(--wildberry-secondary-alt);
+    --background-floating: var(--wildberry-secondary);
+    --background-tertiary: var(--wildberry-tertiary);
+    --background-accent: var(--background-primary);
+    --background-mentioned-side: 255,183,108;
+    /* --header-primary: var(--wildberry-accent-color); */
+    --interactive-active: var(--wildberry-accent-color);
+    --radio-group-dot-foreground: var(--wildberry-accent-color);
+    /* Chat input box */
+    --channeltextarea-background: var(--wildberry-input-box);
+    --scrollbar-auto-thumb: var(--wildberry-scrollbar-thumb);
+    --scrollbar-auto-track: var(--wildberry-scrollbar-track);
+    --scrollbar-auto-scrollbar-color-thumb: var(--wildberry-scrollbar-thumb);
+    --scrollbar-auto-scrollbar-color-track: var(--wildberry-scrollbar-track);
+    --text-link: var(--wildberry-secondary-alt);
+}
+
+/* Weird Discord Possesive */
+.theme-dark .pageWrapper-1PgVDX {
+  background-color: var(--background-primary);
+}
+
+
+/* People column */
+.theme-dark .container-1D34oG { background-color: var(--background-primary); }
+
+/* Modals */
+.theme-dark .root-1gCeng { background-color: var(--background-primary); }
+.theme-dark .footer-2gL1pp { background-color: var(--background-tertiary); }
+
+/* Popup when you click a mention */
+.theme-dark .headerNormal-T_seeN { background-color: var(--background-tertiary); }
+.theme-dark .body-3iLsc4, .theme-dark .footer-1fjuF6 { background-color: var(--background-secondary); }
+
+/* Mention autocompletion in chat box */
+.theme-dark .autocomplete-1vrmpx { background-color: var(--background-tertiary) }
+.theme-dark .selected-1Tbx07 { background-color: var(--background-secondary); }
+
+.theme-dark .item-2hkk8m {
+    background-color: var(--header-primary);
+}
+
+
+.theme-dark .focused-3afm-j {
+  background-color: var(--background-mentioned-side);
+}
+
+
+
+/* Assets are all white*/
+.theme-dark svg {
+    color: var(--wildberry-svg);
+}
+
+.theme-dark .icon-1DeIlz {
+  color: var(--wildberry-svg);
+}
+.theme-dark .icon-22AiRD {
+  color: var(--wildberry-svg);
+}
+.theme-dark .premiumIcon-1rDbWQ {
+    color: 255,115,250;
+}
+
+.theme-dark .ownerIcon-2NH9FM {
+    color: 250,166,26;
+}
+/* Discord mentions*/
+.theme-dark .mentioned-xhSam7:before {
+    background-color: var(--wildberry-mention);
+}
+
+.theme-dark .mentioned-xhSam7 .mention {
+    background-color: var(--wildberry-mention);
+}
+
+.theme-dark .wrapper-3WhCwL {
+  color: var(--background-secondary-alt);
+}
+
+.interactive:hover {
+  background-color: var(--wildberry-tertiary);
+}
+/* New Messages */
+
+.theme-dark .newMessagesBar-265mhP {
+  background-color: var(--background-secondary-alt);
+}
+
+
+/* Inputs */
+
+.theme-dark input {
+  background-color: var(--wildberry-input-box);
+}
+/* Discord Codeblocks */
+.theme-dark code {
+    background-color: var(--wildberry-input-box);
+}
+
+.theme-dark .inline {
+    background-color: var(--background-primary);
+}
+
+
+/* Embeds with no explicit color set*/
+.theme-dark .embed-IeVjo5 {
+    border-color: var(--background-primary);
+}
+
+.theme-dark .item-2hkk8m {
+  color: var(--wildberry-secondary-alt);
+  background-color: var(--wildberry-secondary-alt);
+}
+
+/* Damn Dots */
+
+.theme-dark .unread-2lAfLh {
+  background-color: var(--wildberry-secondary-alt);
+}
+
+/* Do not Disturb Status*/
+.theme-dark rect[mask="url(#svg-mask-status-dnd)"] {
+    fill: var(--wildberry-red);
+}
+/* Mention Badge*/
+.theme-dark .numberBadge-2s8kKX {
+    background-color: var(--wildberry-red) !important;
+}
+/* Search Modal */
+.theme-dark .open-6_Y_aH {
+    background-color: var(--background-secondary);
+}
+
+/* Quote */
+.theme-dark .blockquoteContainer-U5TVEi {
+    background-color: var(--background-tertiary);
+    
+}
+
+.theme-dark .blockquoteContainer-U5TVEi .blockquoteDivider-2hH8H6 {
+  background-color: var(--wildberry-secondary-alt);
+}
+
+/* New Reply*/
+.repliedMessage-VokQwo:before {
+    border-color: var(--wildberry-secondary-alt);
+}
+
+/* Context Menus*/
+.thin-1ybCId {
+    background-color: var(--background-secondary);
+}
+
+/* Folders are ugly */
+.theme-dark .folder-21wGz3 {
+  background-color: var(--wildberry-secondary-alt);
+}
+
+.theme-dark .expandedFolderIconWrapper-1xLaU- {
+  color: white;
+}
+
+/* User Area */
+.theme-dark .panels-j1Uci_ {
+  background-color: 164,80,139;
+  background-image: linear-gradient(326deg, 164,80,139 0%, 95,10,135 74%);
+}
+
+/* RPC */
+
+.theme-dark .headerPlaying-j0WQBV {
+  background-color: var(--background-tertiary);
+}
+
+.theme-dark .lookFilled-1Gx00P {
+  background-color: var(--wildberry-accent-color);
+}
+
+.theme-dark .colorGrey-2DXtkV {
+  background-color: var(--wildberry-less-hot);
+}
+
+/* Bot Tag */
+.botTagRegular-2HEhHi {
+  transition: .5s;
+  background: rgba(114,137,218,0.1);
+  color: 114,137,218;
+}
+.botTagRegular-2HEhHi:hover {
+  transition: .5s;
+  background: 114,137,218
+  color: 0,15,255;
+}
+
+/* Selection Menu Neutral */
+.passthrough-1c2ewQ.selected-2YhbGh  {
+  background-color: 255,186,0 !important;
+}
+
+/* Better ROles */
+.role-2irmRk {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 5px;
+}
+.roleCircle-3xAZ1j::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  opacity: .2;
+  pointer-events: none;
+}
+.footer-1fjuF6 {
+  border-top: none;
+}
+/*
+
+Gradient Dark (c) Samia Ali <samiaab1990@gmail.com>
+
+*/
+
+.theme-dark .hljs
+{
+display: block;
+overflow-x: auto;
+padding: 0.5em;
+/* background: rgb(80,31,122); */
+/* background: linear-gradient(166deg, rgba(80,31,122,1) 0%, rgba(40,32,179,1) 80%); */
+background-color: var(--wildberry-input-box);
+color:#e7e4eb;
+}
+
+.theme-dark .markup-2BOw-j code {
+  border: 1px solid var(--wildberry-tertiary);
+}
+
+.theme-dark .powercord-codeblock-table td:first-child {
+  /* border-right: 1px solid var(--wildberry-less-hot); */
+  color: var(--background-mentioned-side);
+}
+
+/* .theme-dark .powercord-codeblock-lang {
+   border-bottom: 1px solid var(--wildberry-less-hot); 
+  color: var(--background-mentioned-side);
+}  */
+
+.hljs-subtr{
+  color: 231,228,235;
+}
+
+.hljs-doctag,
+.hljs-meta,
+.hljs-comment,
+.hljs-quote
+{
+  color:#af8dd9;
+}
+
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-template-tag,
+.hljs-regexp,
+.hljs-attr,
+.hljs-tag
+{
+  color: 174,251,255;
+}
+
+.hljs-params,
+.hljs-selector-class,
+.hljs-bullet
+
+{
+  color: 241,159,255;
+  
+}
+
+.hljs-keyword,
+.hljs-section,
+.hljs-meta-keyword,
+.hljs-symbol,
+.hljs-type
+
+{
+
+  color: 23,252,149;
+}
+
+.hljs-addition,
+.hljs-number,
+.hljs-link
+{
+  color:1 97,254,0;
+}
+
+
+.hljs-string
+{
+  color: 56,192,255;
+}
+
+
+.hljs-attribute,
+.hljs-addition
+{
+  color: 231,255,159;
+}
+
+.hljs-variable,
+.hljs-template-variable
+
+{
+  color: 228,71,255;
+}
+
+.hljs-builtin-name,
+.hljs-built_in,
+.hljs-formula,
+.hljs-name,
+.hljs-title,
+.hljs-class,
+.hljs-function
+{
+  color: 255,200,0;
+
+}
+
+.hljs-selector-pseudo,
+.hljs-deletion,
+.hljs-literal
+{
+  color: 255,158,68;
+
+}
+
+.hljs-emphasis,
+.hljs-quote
+{
+  font-style:italic;
+}
+
+.hljs-params,
+.hljs-selector-class,
+.hljs-strong,
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-template-tag,
+.hljs-section,
+.hljs-keyword
+{
+  font-weight:bold;
+}
